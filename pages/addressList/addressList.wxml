@@ -1,0 +1,40 @@
+  <!--pages/addressList/addressList.wxml-->
+<view class="contain">
+      <view class="navbar">
+          
+
+            <view class="kind-list-item-bd kind-list-item-bd-show">
+                  <view class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
+                    <block wx:for="{{message}}" wx:key="{{index}}">
+                        <view class="navigator-text">
+                        <view class='left'>
+                        
+                        <icon wx:if="{{item.is_default==1?true:false}}" type="success_circle" color="red" bindtap="selectList" data-id="{{item.adrs_id}}" data-index="{{index}}"/>
+                        <icon wx:else type="circle" color="#aaaaaa" bindtap="selectList" data-id="{{item.adrs_id}}"  data-index="{{index}}" />
+                          <view class='message'>
+                                <text class='name'>{{item.adrs_name}}</text>
+                                <text class='address'>{{item.adrs_addres}}</text>
+                          
+                          </view>
+                        </view>
+                        <view class='left'>
+                          
+                          <text class='tel'>{{item.adrs_phone}}</text>
+                           <navigator open-type="redirect" url="../addAddress/addAddress?id={{item.adrs_id}}" hover-class="other-navigator-hover">
+                            <image class='edit' src="../../images/edit.png"></image>
+
+                      </navigator>
+                      </view>
+                        </view>
+                   
+                    </block>
+                  </view>
+                </view>
+      </view>  
+
+  <view class="btn-area" id="buttonContainer">
+        <button type="primary" hover-class="other-button-hover" bindtap='add'>+ 添加新地址 +</button>
+        
+    </view>
+
+</view>

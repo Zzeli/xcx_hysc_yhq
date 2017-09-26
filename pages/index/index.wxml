@@ -1,0 +1,94 @@
+<!--index.wxml-->
+<!--main.wxml-->
+<view class="page" >
+<view class="mask" wx:if="{{active==1}}"></view>
+<view class="call"  wx:if="{{active==1}}">
+<view class="top">
+ <view class="phone">{{phone}}</view>
+ <view class="shout" bindtap="callmeTap">呼叫</view>
+
+</view>
+<view class="bottom" bindtap="deselect">取消</view>
+
+</view>
+
+<swiper class="swiper-box" indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="rgb(255, 255, 255)">
+  <block wx:for="{{banner}}" wx:key="index">
+  
+    
+    <swiper-item>
+    <navigator url="../details/details?id={{item.ads_url}}">
+      <image src="{{item.img}}" class="slide-image"/>
+     </navigator>   
+    </swiper-item>
+     
+  </block>
+</swiper>
+
+<view class="options">
+  <view class="options-item" wx:for="{{nav}}" wx:key="index" id="{{item.nav_id}}">
+ 
+   <view hover-class="none" bindtap="{{item.nav_model===0?'optionClick':'alone'}}" data-id="{{index}}" >  
+          <image src="{{item.img}}" class="options-pic" ></image>
+           <view class="options-name">{{item.nav_name}}</view>
+         </view>       
+  </view>
+  
+</view>
+ <view class="special" style='magin-top:16rpx;'>
+  <view class="title">优惠券</view>
+  </view>
+ <view class="page-body">
+    <view class="page-section">
+      <view class="page-section-spacing">
+        <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+          <view id="demo1" class="scroll-view-item_H demo-text-1" wx:for="{{coupon}}" wx:key="{{index}}">
+             <view class='price_perfer'>{{item.cou_money}}</view>
+             <view class='get' bindtap='got' data-id='{{item.cou_id}}' data-index='{{index}}'>立即领取</view>
+             <view class='timeTo'>有效期至： <text>{{item.endtime}}</text></view>
+              <image src='../../images/perfer.png'></image> 
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+    </view> 
+
+
+<view class="special" wx:key="index" >
+  <view class="title">特价商品</view>
+  
+  <view class="special-fish" style="background-image:url('{{item.img}}')" wx:for="{{index_ads}}"  wx:key="index">
+         <navigator url="../details/details?id={{item.ads_url}}"></navigator>
+  </view>
+</view>
+<scroll-view  style="height: {{windowHeight}}px; width: {{windowWidth}}px;" scroll-y="true" >
+<view class="fish-details">
+ <view class="details-con">
+    <view class="details--item" wx:for="{{details}}" wx:key="index">
+     <navigator url="../details/details?id={{item.goods_id}}">
+      <image src="{{item.img}}"></image>
+      <view class="name">{{item.goods_name}}</view>
+       <view class="price">
+           <view class="sign"> {{sign}}</view>
+           {{item.goods_price}}
+       </view>
+      
+    <view class="previou">
+    <view class="no1" style="color: #a19e9e;">
+      ￥{{item.goods_market_price}}
+      <rich-text nodes="{{nodes}}" bindtap="tap"></rich-text>
+    </view>
+    </view>
+    </navigator>
+    </view>
+  </view>
+</view>
+</scroll-view>
+  <import src="../template/template.wxml" /> 
+  <template is="loading" data="{{hidden}}"></template> 
+   <template is="nodata" data="{{nodata}}"></template>
+  <template is="skill" data="{{skill}}"></template>
+
+
+</view>

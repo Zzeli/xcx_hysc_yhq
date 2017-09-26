@@ -1,0 +1,26 @@
+<!--pages/logistics/logisics.wxml-->
+  <view class="content">
+                    <!-- 点击商品图片可跳转到商品详情 -->
+                      <image class="carts-image" src="../../images/classify1.png"></image>
+                    <view class="carts-right">
+                        <view class="carts-title">  
+                           <text>物流状态</text>
+                           <text>运输中</text>
+                       </view> 
+                        <view class="carts-price">
+                             <text>承运来源 :</text>
+                             <text>申通快递</text>
+                        </view>
+                        <view class="carts-price">
+                             <text>运单编号 :</text>
+                             <text>{{number}}</text>
+                             <view class='copy' bindtap='copy'>复制</view>
+                        </view>
+                          <view class="carts-price">
+                             <text>官方电话 :</text>
+                             <text>0351-666666</text>
+                        </view>
+                          
+                    </view>
+
+  </view>

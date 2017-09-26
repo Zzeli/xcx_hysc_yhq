@@ -1,0 +1,59 @@
+{
+  "pages": [
+    "pages/splash/splash",
+    "pages/purchase/purchase",
+    "pages/myself/myself",
+    "pages/addressList/addressList",
+    "pages/index/index",
+    "pages/service/service",
+    "pages/classify/classify",
+    "pages/importer/importer",
+    "pages/template/template",
+    "pages/flashSale/flashSale",    
+    "pages/variety/variety",
+    "pages/about/about",
+    "pages/logistics/logisics",
+    "pages/search/search",
+    "pages/pay/pay",
+    "pages/addAddress/addAddress",
+    "pages/details/details",
+    "pages/coupon/coupon",
+    "pages/flash_details/flash_details"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "欢颜商城",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "#56A8F4",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home-select.png",
+        "text": "首页"
+      },
+      {
+        "iconPath": "images/classify.png",
+        "selectedIconPath": "images/classify-select.png",
+        "pagePath": "pages/classify/classify",
+        "text": "分类"
+      },
+      {
+        "iconPath": "images/servey.png",
+        "selectedIconPath": "images/servey-select.png",
+        "pagePath": "pages/service/service",
+        "text": "客服"
+      },
+      {
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my-select.png",
+        "pagePath": "pages/purchase/purchase",
+        "text": "我的"
+      }
+    ]
+  }
+}

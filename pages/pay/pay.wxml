@@ -1,0 +1,105 @@
+<!--pages/pay/pay.wxml-->
+<view class="contain">
+<view class="navbar">
+      <block  wx:if='{{noaddress==1}}'>
+            <navigator url="../addAddress/addAddress"  hover-class="other-navigator-hover">
+                <text>在此添加收货地址~</text> 
+            </navigator>
+       </block>
+
+       <view wx:else class="kind-list-item-bd kind-list-item-bd-show">
+            <view class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
+              <block>
+                <navigator url="../addressList/addressList?id={{id}}" hover-class="other-navigator-hover">
+                  <view class="navigator-text" >
+                     <view class='message'>
+                          <text class='name'>{{adrs_name}}</text>
+                          <text class='address'>{{adrs_addres}}</text>
+                     
+                     </view>
+                     <text class='tel'>{{adrs_phone}}</text>
+                  
+                  </view>
+                  <view class="navigator-arrow"></view>
+                </navigator>
+              </block>
+            </view>
+          </view>
+</view>  
+      
+ <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove">
+  <view class="content">
+                    <!-- 点击商品图片可跳转到商品详情 -->
+                    <navigator url="#">
+                      <image class="carts-image" src="{{goods_thumb}}"></image>
+                    </navigator>
+                    <view class="carts-right">
+                        <text class="carts-title">{{goods_name}}</text>
+                        <view class="carts-price">
+                             <text class='price'>￥{{goods_price}}</text>
+                            <text class='num'>x {{goods_num}}</text>
+                        </view>
+                          
+                    </view>
+
+  </view>
+ </view>
+  <view class='pay-goods'>
+        <view class='pay-sale'>
+        <text>商品金额</text>
+        <text>￥{{total_fee}}</text>
+        </view>
+      <view class='pay-sale'>
+        <text>运费</text>
+        <text>+ ￥ {{goods_freight}}</text>
+        </view>
+
+
+       <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+        <view class="kind-list-item">
+          <view id="{{item.id}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="kindToggle">
+            <view class="kind-list-text pay-sale" style='padding-bottom:0'> <text>优惠券</text>
+             <icon  size='20' wx:if="{{cou_id?true:false}}" type="success" color="red" bindtap="select" data-id="{{item.adrs_id}}" data-index="{{index}}"/>
+             <icon wx:else type="circle" color="#aaaaaa" bindtap="select" data-id="{{item.adrs_id}}"  data-index="{{index}}" size='20' /> 
+            </view>
+             <text>- ￥ {{cou_money}}</text>
+          </view>
+          <view class="kind-list-item-bd {{item.open ? 'kind-list-item-bd-show' : ''}}" style='margin-top:31rpx'>
+            <view class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
+              <block wx:for="{{coupons}}"  wx:key="{{index}}">
+                 <view class='navigator'>
+                 <view class="navigator-text">{{item.cou_name}}</view>
+                   <view class='cou_price' hidden='true'>{{item.cou_money}}</view>
+                   <icon wx:if="{{cou_id==item.cou_id?true:false}}" type="success_circle" color="red" bindtap="selectList" data-id="{{item.cou_id}}" data-index="{{index}}"/>
+                   <icon wx:else type="circle" color="#aaaaaa" bindtap="selectList" data-id="{{item.cou_id}}"  data-index="{{index}}" /> 
+                  
+                 </view>
+              </block>
+                 <view class='navigator'>
+                 <view class="navigator-text">不使用优惠券</view>
+                   <icon wx:if="{{cou_id==nocou_id?true:false}}" type="success_circle" color="red" bindtap="selectList" data-index="noindex"/>
+                   <icon wx:else type="circle" color="#aaaaaa" bindtap="selectList" data-index="noindex" /> 
+                  
+                 </view>
+
+            </view>
+          </view>
+        </view>
+      </block> 
+  
+  
+  
+  </view>
+
+   <view class="select">
+                <view class="payfor">
+                      <view>
+                      <text>合计</text>
+                       ￥{{final}}
+                       </view>
+                     <view class="pay" type="primary" bindtap="requestPayment" loading="{{loading}}" data-id='{{goods_id}}'>
+                      确认支付
+                      </view>
+                </view>
+              </view>
+</view>

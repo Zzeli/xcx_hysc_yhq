@@ -1,0 +1,66 @@
+/* pages/coupon/coupon.wxss */
+page{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coupon{
+  width: 680rpx;
+  padding-bottom: 39rpx;  
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pic{
+  width: 143rpx;
+  height: 143rpx;
+  background: pink;
+  border-radius: 50%;
+  margin-top: -71rpx;
+  margin-bottom: 46rpx;
+}
+button{
+  width: 448rpx;
+  background:  #d81416!important;
+  color: #fff;
+}
+button.got{
+  background: #bfc0c1!important;
+}
+.coupon_price{
+  display: flex;
+}
+.price{
+  font-size: 115rpx;
+  text-align: justify;
+  color: #232424;
+}
+.rmb{
+  font-size: 30.4rpx;
+  text-align: justify;
+  color: #404242;
+}
+.yhq{
+  font-size: 45.6rpx;
+  text-align: justify;
+  color: #323131;
+}
+.right{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 21rpx;
+}
+.coupon_time text{
+  font-family: "Microsoft YaHei";
+  font-size: 24rpx;
+  text-align: justify;
+  color: #444646;
+}
+.coupon_time{
+  margin-bottom: 72rpx;
+  
+}

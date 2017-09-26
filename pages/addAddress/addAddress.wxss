@@ -1,0 +1,103 @@
+/* pages/addAddress/addAddress.wxss */
+.contain{
+  margin-top: 8rpx;
+  background: #fff;
+
+}
+.input {
+  width: 100%;
+}
+
+.input input,{
+  width: 60%;
+  background-color: #fff;
+}
+
+.section {
+  padding-top: 20rpx;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+.input{
+  display: flex;
+  background: #fff;
+  border-bottom: 1px #d9d9d9 solid;
+  padding: 20rpx 31rpx;
+  box-sizing: border-box;
+  align-items: center;
+  
+}
+.input text{
+  font-size: 24rpx;
+  font-weight: 500;
+  text-align: center;
+  color: #37383b;
+  line-height: 50rpx;
+}
+.input input,.picker{
+  padding-left: 50rpx;
+  font-size: 24rpx;
+  font-weight: 500;
+  text-align: left;
+  color: #37383b;
+  line-height: 43rpx;
+  font-family: '微软雅黑'
+}
+
+button{
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+   font-size: 30rpx;
+  font-weight: 500;
+  text-align: center;
+  color: #fbfbfb;
+}
+button:nth-child(1){
+  margin-bottom: 0;
+   background-color: #db2126;
+}
+.other-button-hover{
+    background-color: #db2126;
+}
+button:nth-child(2){
+  margin-bottom: 0;
+   background-color: #dee2de;
+  
+}
+.btn-area{
+  padding: 0 18rpx 30rpx;
+  box-sizing: border-box;
+}
+.shaow{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 111;
+}
+.shaow-con{
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.6; 
+}
+.citybody{
+  background: #fff;
+}
+input:focus{
+  font-weight: normal;
+}

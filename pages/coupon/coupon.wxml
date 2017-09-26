@@ -1,0 +1,21 @@
+<!--pages/coupon/coupon.wxml-->
+
+<view class='coupon'>
+   <view></view>
+   <image src='{{logo}}' class='pic'></image>
+   <view class='coupon_price'>
+    <text class='price'>{{cou_money}}</text>
+    <view class='right'>
+      <text class='rmb'>RMB</text>
+      <text class='yhq'>优惠券</text>
+    </view>
+   
+   </view>
+   <view class='coupon_time'>
+     <text>有效期：{{startime}}至{{endtime}}</text>
+   
+   </view>
+    <button type="primary" hover-class="other-button-hover" bindtap='get' class='{{got==1?"got":""}}'>{{text_get}}</button>
+
+
+</view>

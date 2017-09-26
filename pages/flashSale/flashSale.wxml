@@ -1,0 +1,79 @@
+<!--pages/flashSale/flashSale.wxml-->
+
+<view class='flashSale'>
+<swiper class="swiper-box" indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="rgb(255, 255, 255)">
+  <block>
+    <swiper-item>
+    <navigator url="../details/details?id={{item.ads_url}}">
+      <image src="../../images/banner.png" class="slide-image"/>
+     </navigator>   
+    </swiper-item>
+  </block>
+</swiper>
+<view class="navbar" >  
+  <view wx:for="{{navbar}}" class='nav'>
+  <text data-index="{{index}}" data-id="{{item.t_id}}" class="item {{currentTab==index? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item.startime}}</text> 
+  </view>
+  <view class='concat'></view>
+</view>   
+<view class="navbarText navbar" >  
+  <view wx:for="{{navbarText}}" class='nav'>
+  <view class='concat'></view>
+  <text data-idx="{{index}}" class="item {{item.now==1 ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text> 
+  </view>
+    <view class='concat'></view>
+</view>  
+
+
+
+ <view class="touch-item indent-con">
+        <view class='countdown'>
+          <text>离本场结束还剩</text>
+            <!-- <block wx:if="{{total_micro_second<=0}}">剩余时间：已经截止</block>
+            <block wx:if="{{clock!='已经截止'}}">剩余时间：{{endtime}}</block> -->
+          <view class='time'>
+             <view wx:if="{{d !=''?true:false}}">
+              <text>{{d}}</text>：             
+             </view>
+             <view wx:if="{{h !=''?true:false}}">
+                 <text>{{h}}</text>：             
+             </view>
+             <view wx:if="{{m !=''?true:false}}">
+                  <text>{{m}}</text>：
+             </view>
+             <view wx:if="{{s !=''?true:false}}">
+                   <text>{{s}}</text> 
+             </view>
+          </view>
+        </view>
+  <view class="content" wx:for="{{goods}}" bindtap='flash_details' data-id='{{item.goods_id}}'>
+                    <!-- 点击商品图片可跳转到商品详情 -->
+                      <image class="carts-image" src="{{item.goods_thumb}}"></image>
+                    <view class="carts-right">
+                        <text class="carts-title">{{item.goods_name}}</text>
+                        <view class="carts-price">
+                             <text>￥</text>
+                             <text class='price'>{{item.goods_price}}</text>
+                              <view class="previou">
+                                <view class="no1" style="color: #a19e9e;">
+                                  ￥{{item.goods_market_price}}
+                                  <rich-text nodes="{{nodes}}" bindtap="tap"></rich-text>
+                                </view>
+                                </view>
+                        </view>
+                          <view class="sale">
+                             <text>已售</text>
+                             <text>{{item.proportion}}</text>
+                             <view class='progress'>
+                             <progress  percent="{{item.proportion}}" color="#ff464e"  active />
+                             </view>
+                        </view>
+                        <button type="primary" hover-class="other-button-hover" bindtap='save' formType="submit">立即抢购</button>
+                          
+                    </view>
+
+  </view>
+ </view>
+
+</view>

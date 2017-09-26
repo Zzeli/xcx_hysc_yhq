@@ -1,0 +1,223 @@
+/* purchase.wxss */
+@import "../index/index.wxss";
+page{  
+  display: flex;  
+  flex-direction: column;  
+  height: 100%;  
+}  
+text{
+  font-weight: 600!important;
+}
+.navbar{  
+  flex: none;  
+  display: flex;  
+  background: #edeaea;  
+  width: 100%;
+
+}  
+.purchase{
+    position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 11111;
+}
+.navbar .item{  
+  position: relative;  
+  flex: auto;  
+  text-align: center;  
+  line-height: 84rpx;  
+  font-family: "微软雅黑";
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #5c5a5a;
+}  
+.navbar .item.active{  
+  color: #db2126;  
+}  
+.navbar .item.active:after{  
+  content: "";  
+  display: block;  
+  position: absolute;  
+  bottom: 0;  
+  left: 0;  
+  right: 0;  
+  height: 6rpx; 
+  width: 76rpx; 
+  background:  #db2126; 
+  margin: 0 auto;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background: #fff;
+} 
+ 
+.carts-list {
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx 0rpx;
+  background: #f3f1f1;
+}
+ 
+.carts-item {
+   width: 100%;
+   margin-bottom: 12rpx;
+   background: #fff;
+
+}.indent-con{
+  margin-top: 67rpx;
+}
+.indent-details{
+   display: flex;
+  flex-direction: row;
+  width:100%;
+  border-bottom: 1px solid  #edeaea;
+   padding: 30rpx 40rpx;
+   box-sizing: border-box;
+  
+}
+.indent{
+  border-bottom: 1rpx solid #edeaea;
+  font-size: 20rpx;
+  font-weight: 500;
+  text-align: left;
+  color: #37383b;
+  line-height: 18rpx;
+  padding:27rpx 40rpx 16rpx 40rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+     box-sizing: border-box;
+  
+}
+ 
+.carts-image {
+  width:144rpx;
+  height:144rpx;
+  margin-right: 10rpx;
+
+}
+ 
+.carts-text {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+ 
+.carts-title {
+  margin: 10rpx; 
+  font-size: 24rpx;
+  font-weight: 500;
+  line-height: 1.67;
+  text-align: left;
+  color: #37383b;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+ 
+.carts-subtitle {
+  font-size: 25rpx;
+  color:darkgray;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+
+}
+ 
+.carts-price {
+  font-size: 30rpx;
+  text-align: right ;
+  color: #2e2d2d;
+
+}
+.status{
+  font-family: "微软雅黑";
+  font-size: 20rpx;
+  font-weight: 500;
+  line-height: 1.67;
+  text-align: right;
+  color: #ee2e33;
+}
+.num{
+  font-size: 24rpx;
+  text-align: right;
+  color: #979595;
+}
+.mark{
+  color: #8E8D8D;
+  font-size: 26rpx;
+}
+.pay{
+  display: flex;
+  justify-content: flex-end;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+}
+.pay text{
+  padding: 7rpx 35rpx;
+  font-family: "微软雅黑";
+  font-size: 22rpx;
+  font-weight: 500;
+  text-align: center;
+  border-radius: 15rpx;
+  color: #37383b;
+   border: solid 1rpx #bfbebe;
+}
+.pay button{
+  font-family: "微软雅黑";
+  font-size: 16rpx;
+  font-weight: 500;
+  text-align: center;
+  border-radius: 15rpx;
+  color: #37383b;
+   border: solid 1rpx #bfbebe;
+   background:none;
+  display: inline;
+  margin: 0;
+}
+button::after{
+  border:none;
+}
+
+.pay text:nth-child(1){
+  margin-right: 13rpx;
+}
+.noindent{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  align-items: center;
+  background: #fff;
+  padding-top: 200rpx;
+}
+.bg{
+  width: 370rpx;
+  height: 250rpx;
+  margin-bottom: 87rpx;
+}
+.noindent text{
+  font-size: 30rpx;
+  font-weight: 500;
+  text-align: center;
+  color: #999999;
+}
+.totalP{
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid  #edeaea;
+  justify-content: flex-end;
+  font-size: 28rpx;
+  padding:16rpx 40rpx 16rpx 40rpx;
+
+}
+.nodata{
+  margin-top: 0;
+  margin-bottom: 15rpx;
+}

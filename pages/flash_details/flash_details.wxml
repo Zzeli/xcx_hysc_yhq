@@ -1,0 +1,148 @@
+<!--pages/flash_details/flash_details.wxml-->
+<!--details.wxml-->
+ <import src="../template/template.wxml" /> 
+
+<import src="../../wxParse/wxParse.wxml"/> 
+    <template is="nodetails" data="{{nodetails}}"></template>
+      <template is="loading" data="{{hidden}}"></template> 
+<view class="connt {{overflow == 1?'scroll':''}}" hidden='{{show}}'>
+
+
+
+<view class='shaow_con' hidden='{{shaow}}'>
+
+<view class='shaow'></view>
+
+<view class='counts_details'>
+      <view class="content">
+           
+                    <!-- 点击商品图片可跳转到商品详情 -->
+                   <navigator url="../details/details?id={{item.id}}" >
+                      <image class="carts-image" src="{{goods_thumb}}" ></image>
+                    </navigator>
+                    <view class="carts-right">
+                        <text class="carts-title">{{goods_name}}</text>
+                        <view class="carts-price">
+                              ￥{{goods_price}}
+                        </view>
+                    </view>
+                    <image src='../../images/close.png' class='close' bindtap='close'></image>                 
+  
+                      </view>
+                        <view class='goods_count'>
+                            <view class='count_name'>数量</view>
+                            
+                            <view class='right'>
+                               <view class='count_name'>库存<text style='margin-bottom:8rpx;font-size:28rpx'>{{goods_storage}}</text></view>
+                                <view  class="goodsNumber"  wx:for="{{items}}" wx:key="{{index}}">
+                                  <text bindtap="minusCount" data-index="{{index}}">-</text>
+                                  <text>{{item.num}}</text>
+                                  <text bindtap="addCount" data-index="{{index}}">+</text>
+                                
+                                </view>
+                            
+                            
+                            </view>
+                         
+                            
+                      </view>
+                     
+                    <!-- 底部操作栏 -->
+                     <view class="select">
+                              <view class="pay" bindtap='toPayOrder' data-id='{{gcate_id}}'>
+                                立即抢购
+                              </view>
+                     </view>
+       
+       </view>
+
+
+
+</view>
+
+  
+
+<swiper class="swiper-box" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block>
+    <swiper-item  wx:for="{{goods_imgs}}" wx:key="{{index}}"> 
+      <image src="{{item}}" bindtap="previewImage"></image>
+    </swiper-item>
+    <view class='flash_price'>
+      <view class='left'>
+        <view class='price'>
+             <text>￥</text>
+             <text>{{goods_price}}</text>
+        </view>
+          <view class="no1" style="color:#fff">
+           ￥
+           {{goods_market_price}}
+           <rich-text nodes="{{nodes}}" bindtap="tap"></rich-text>
+        </view>      
+      </view>
+      <view class='right'>
+         <text>距离结束还有</text>
+          <view class='time'>
+             <view wx:if="{{d !=''?true:false}}">
+              <text>{{d}}</text>：             
+             </view>
+             <view wx:if="{{h !=''?true:false}}">
+                 <text>{{h}}</text>：             
+             </view>
+             <view wx:if="{{m !=''?true:false}}">
+                  <text>{{m}}</text>：
+             </view>
+             <view wx:if="{{s !=''?true:false}}">
+                   <text>{{s}}</text> 
+             </view>
+          </view>
+      
+      </view>
+    
+    </view>
+  </block>
+</swiper>
+<scroll-view scroll-y="true">
+  <view class="detail">
+    <text class="title">{{goods_name}}</text>
+    <view class="price">
+       <text class="stock" style='margin-left:0'>库存</text>
+       <text class="num">{{goods_storage}}</text>
+       <text class="carriage">运费</text>
+       <text class="charge">{{goods_freight}}</text>
+    </view>
+
+  </view>
+  <view class="separate"></view>
+  <view class="describe">
+    <view class="title">商品描述</view>
+    <view class="matter">
+         <view class="wxParse">
+              <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+        </view>
+    </view>
+  
+  </view>
+
+
+
+</scroll-view>
+
+  <template is="loading" data="{{hidden}}"></template> 
+  <template is="skill" data="{{skill}}"></template>
+<view class="temp"></view>
+  
+<!-- 底部悬浮栏 -->
+<view class="detail-nav">
+   <button bindtap="callmeTap">
+        <image src="../../images/telephone.png"></image>
+           拨打电话
+        </button>
+        
+        <button open-type="contact" class='contact'>
+        <image src="../../images/conmmunity.png">
+      </image>在线咨询
+      </button>
+      <button class="button-red" bindtap="immeBuy" >立即抢购</button>
+</view>
+</view>
+

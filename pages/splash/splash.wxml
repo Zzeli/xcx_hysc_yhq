@@ -1,0 +1,7 @@
+<!--splash.wxml-->
+  <view class="splash" hidden="{{splash}}" style="background-image:url({{img}})">
+       <button bindtap='goIndex'>
+           {{second}}s后跳过
+         <view class="button-opacity"></view>
+       </button>
+ </view> 

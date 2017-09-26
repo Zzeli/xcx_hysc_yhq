@@ -1,0 +1,13 @@
+<!--importer.wxml-->
+<view class="page">
+   <import src="../template/template.wxml" /> 
+  <template is="list" data="{{list,searchList,nodes}}"></template>
+
+  <template is="nodata" data="{{nodata}}"></template>
+
+  <template is="loading" data="{{hidden}}"></template>
+  <template is="skill" data="{{skill}}"></template>
+  
+</view>
+
+

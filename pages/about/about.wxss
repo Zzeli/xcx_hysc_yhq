@@ -1,0 +1,5 @@
+
+/* about.wxss */
+page,.content{
+  background: #fff;
+}

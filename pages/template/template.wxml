@@ -1,0 +1,147 @@
+<!--template.wxml-->
+
+<template name="search">
+  <view class="fish-details">
+ <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;"
+    class="list" bindscrolltolower="bindDownLoad" bindscrolltoupper="topLoad" bindscroll="scroll">
+ <view class="details-con">
+    <view class="details--item" wx:for="{{list}}"  wx:key="index">
+    <navigator url="../variety/variety?id={{item.gcate_id}}">
+      <view class="image">
+        <image src="{{item.img}}"></image>
+        <view class="name">
+        <view class="opacity"></view>
+        {{item.gcate_name}}
+        </view>
+      </view>
+   </navigator>
+    </view>
+  </view>
+ </scroll-view>
+  
+</view>
+</template>
+
+<template name="skill">
+ <view class="skill" wx:if="{{skill}}">
+ 山西欢颜网络科技有限公司提供技术支持
+ </view>
+</template>
+
+
+
+<template name="list">
+<view class="fish-details">
+        <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;"
+          class="list" bindscrolltolower="bindDownLoad" bindscrolltoupper="topLoad" bindscroll="scroll">
+      <view class="details-con">
+          <view class="details--item" wx:for="{{list}}"  wx:key="index">
+          <navigator url="../details/details?id={{item.goods_id}}">
+            <image src="{{item.img}}"></image>
+            <view class="name">{{item.goods_name}}</view>
+            <view class="price">
+                <view class="sign">￥</view>
+                {{item.goods_price}}
+            </view>
+            
+          <view class="previou">
+          <view class="no1" style="color:#a19e9e;">
+                ￥{{item.goods_market_price}}
+                <rich-text nodes="{{nodes}}" bindtap="tap"></rich-text>
+            </view>
+          </view>
+          </navigator>
+          </view>
+        </view>
+        </scroll-view>
+      </view>
+</template>
+
+
+<template name="loading">
+   <view class="body-view">
+    <loading hidden="{{hidden}}" bindchange="loadingChange">
+      加载中
+    </loading>
+  </view>  
+</template>
+
+<template name="nodata">
+     <view class="nodata" hidden="{{nodata}}">没有更多数据</view>
+</template>
+
+<template name="nosearch">
+     <view class="nodata" hidden="{{nosearch}}">没有您要搜索的内容</view>
+</template>
+<template name="nodetails">
+     <view class="nodata" hidden="{{nodetails}}">当前商品没有详情</view>
+</template>
+<template name="noClass">
+     <view class="nodata" hidden="{{noClass}}">没有商品分类</view>
+</template>
+
+
+
+<!-- 购物车 -->
+
+<template name="no-goods">
+     <view class='bg' style="background:url('../../images/indent.png')center/cover no-repeat"></view>
+  <text>购物车空空如也</text>
+    <view class="to-index-btn" bindtap="toIndexPage">
+            去逛逛
+    </view>
+</template>
+
+<template name="cart-goods-list">
+
+
+<view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{items}}" wx:key="index">
+  <view class="content">
+               <icon wx:if="{{item.selected}}" type="success" color="red" bindtap="selectList" data-index="{{index}}" />
+               <icon wx:else type="circle" bindtap="selectList" data-index="{{index}}" />
+                    
+                    <!-- 点击商品图片可跳转到商品详情 -->
+                    <navigator url="../details/details?id={{item.id}}">
+                      <image class="carts-image" src="{{item.image}}"></image>
+                    </navigator>
+                    <view class="carts-right">
+                        <text class="carts-title">{{item.title}}</text>
+                        <view class="carts-price">
+                              ￥{{item.price}}
+                        <view class="goodsNumber">
+                              <text bindtap="minusCount" data-index="{{index}}">-</text>
+                              <text>{{item.num}}</text>
+                              <text bindtap="addCount" data-index="{{index}}">+</text>
+                            </view>
+                        
+                        </view>
+                          
+                    </view>
+  
+  
+  </view>
+  <view class="del" catchtap="del" data-index="{{index}}">删除</view>
+ </view>
+ <!-- 底部操作栏 -->
+              <view class="select">
+                <!-- wx:if 是否全选显示不同图标 -->
+                <icon wx:if="{{selectAllStatus}}" type="success_circle" color="red" bindtap="selectAll"/>
+                <icon wx:else type="circle" color="#aaaaaa" bindtap="selectAll"/>
+                <text>全选</text>
+                
+                <!-- 总价 -->
+                
+                <view class="payfor">
+                      <view>
+                      <text>合计</text>
+                       ￥{{totalPrice}}
+                       </view>
+                     <view class="pay" bindtap='toPayOrder'>
+                      去结算
+                      </view>
+                </view>
+              </view>
+              
+
+  
+</template>

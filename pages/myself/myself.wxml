@@ -1,0 +1,53 @@
+<!--myself.wxml-->
+<view class="content">
+    <view class="info">
+        <view class="portrait">
+        <image src="{{userInfo.avatarUrl}}"></image>
+        </view>
+        <text>{{userInfo.nickName}}</text>
+    </view>
+
+    
+    <view class="page__bd">
+       
+        <view class="weui-panel">
+            <view class="weui-panel__bd">
+                <view class="weui-media-box weui-media-box_small-appmsg">
+                    <view class="weui-cells weui-cells_in-small-appmsg">
+                        <navigator url="/pages/purchase/purchase" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                            <view class="weui-cell__hd"><image src="../../images/confirm.png" style="width: 20px;height: 20px;margin-right: 5px" /></view>
+                            <view class="weui-cell__bd weui-cell_primary">
+                                <view>全部订单</view>
+                            </view>
+                        </navigator>
+                        <navigator url="/pages/purchase/purchase" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                            <view class="weui-cell__hd"><image src="../../images/pay.png" style="width: 20px;height: 20px;margin-right: 5px" /></view>
+                            <view class="weui-cell__bd weui-cell_primary">
+                                <view>待付款</view>
+                            </view>
+                        </navigator>
+                         <navigator url="/pages/purchase/purchase" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                            <view class="weui-cell__hd"><image src="../../images/send.png" style="width: 20px;height: 20px;margin-right: 5px" /></view>
+                            <view class="weui-cell__bd weui-cell_primary">
+                                <view>待发货</view>
+                            </view>
+                        </navigator>
+                         <navigator url="/pages/purchase/purchase" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                            <view class="weui-cell__hd"><image src="../../images/receipt.png" style="width: 20px;height: 20px;margin-right: 5px" /></view>
+                            <view class="weui-cell__bd weui-cell_primary">
+                                <view>待收货</view>
+                            </view>
+                        </navigator>
+                         <navigator url="/pages/addressList/addressList" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                            <view class="weui-cell__hd"><image src="../../images/address.png" style="width: 20px;height: 20px;margin-right: 5px" /></view>
+                            <view class="weui-cell__bd weui-cell_primary">
+                                <view>管理我的收货地址</view>
+                            </view>
+                        </navigator>
+                    </view>
+                </view>
+            </view>
+        </view>
+       
+    </view>
+</view>

@@ -1,0 +1,13 @@
+<!--service.wxml-->
+<view class="page">
+  <view class="service">
+    <image src="../../images/sevice.png"></image>
+    <text>您好，我是客服~</text>
+    <text>很开心为您服务！</text>
+  </view>
+<view class="button-con">
+        <button bindtap="callmeTap">拨打电话</button>
+        <button open-type="contact">在线咨询</button>
+</view>
+</view>
+

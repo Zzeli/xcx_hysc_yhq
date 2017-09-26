@@ -1,0 +1,6 @@
+<!--search.wxml-->
+   <import src="../template/template.wxml" /> 
+  <template is="list" data="{{list,searchList,nodes}}"></template>
+  <template is="nodata" data="{{nodata}}"></template>
+    <template is="nosearch" data="{{nosearch}}"></template>
+  <template is="skill" data="{{skill}}"></template>

@@ -1,0 +1,172 @@
+@import "../purchase/purchase.wxss";
+page{
+ background: #fff!important;  
+}
+.touch-item {
+ font-size: 14px;
+ display: flex;
+ justify-content: space-between;
+ border-bottom:1px solid #ccc;
+ width: 100%;
+ overflow: hidden;
+}
+.content {
+ width: 100%;
+ padding: 10px;
+ padding-left: 0;
+ line-height: 22rpx;
+ margin-right:0;
+ -webkit-transition: all 0.4s;
+ transition: all 0.4s;
+ -webkit-transform: translateX(90px);
+ transform: translateX(90px);
+ margin-left: -90px;
+ display: flex;
+ align-items: center;
+ 
+}
+.del {
+ background-color: orangered;
+ width: 108rpx;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ color: #fff;
+ -webkit-transform: translateX(90px);
+ transform: translateX(90px);
+ -webkit-transition: all 0.4s;
+ transition: all 0.4s;
+}
+.touch-move-active .content,
+.touch-move-active .del {
+ -webkit-transform: translateX(0);
+ transform: translateX(0);
+}
+
+
+.navbar{
+   font-family: "微软雅黑";
+  font-size: 24rpx;
+  font-weight: 500;
+  text-align: center;
+  color: #37383b;
+  padding: 33rpx 33rpx 28rpx 13rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+
+}
+.carts-list{
+  padding: 0;
+}
+.carts-item{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.carts-Con{
+    width: 858rpx;
+    height: 100%;
+    position: absolute;
+}
+.carts{
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.carts-right{
+  width: 58%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 140rpx;
+}
+.goodsNumber{
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+
+}
+
+.carts-price{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+   font-family: “微软雅黑;
+  font-size: 30rpx;
+  text-align: center;
+  color: #ec033f;
+}
+.carts-title{
+ font-family: "微软雅黑";
+  font-size: 24rpx;
+  font-weight: 500;
+  text-align: left;
+  color: #37383b;
+  width: 100%;
+}
+
+.goodsNumber text:nth-child(1),.goodsNumber text:nth-child(3){
+  width: 50rpx;
+  height:50rpx;
+   border: solid 1rpx #e7e7e7;
+   line-height: 50rpx;
+   text-align: center;
+  font-family: "微软雅黑";
+    font-size: 26rpx;
+    font-weight: 500;
+    color: #636466;
+}
+.goodsNumber text:nth-child(2){
+   width: 74rpx;
+   height: 50rpx;
+   border: solid 1rpx #e7e7e7;
+   border-right: 0;
+   border-left: 0;
+   line-height: 50rpx;
+   text-align: center;
+    font-family: "微软雅黑";
+  font-size: 26rpx;
+  font-weight: 500;
+  color: #636466;
+}
+.select{
+  width: 100%;
+  border-bottom: 1rpx solid #edeaea;
+  font-family: "微软雅黑";
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #37383b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+icon{
+  border-radius: 50%;
+  margin-right: 27rpx;
+  margin-left: 16rpx;
+}
+icon.active{
+  display: none;
+}
+.payfor{
+  width: 80%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.pay{
+  width: 225rpx;
+  background: #f63226;
+  font-family: "微软雅黑";
+  font-size: 30rpx;
+  font-weight: 500;
+  text-align: center;
+  color: #ffffff;
+  margin-left: 75rpx;
+}
+.title-box{
+  text-align: center;
+  
+}

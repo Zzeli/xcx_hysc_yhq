@@ -1,0 +1,56 @@
+/* pages/logistics/logisics.wxss */
+@import "../flashSale/flashSale.wxss";  
+page{
+  background: #F2F2F2!important;
+}
+text{
+  font-weight: normal!important;
+}
+.content{
+  margin-top: 5rpx;
+}
+.carts-right{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+}
+.carts-image {
+  flex: 1 0 auto;
+  width: 165rpx;
+  height: 165rpx;
+}
+.carts-title{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.carts-title text{
+   font-size: 26rpx;
+  text-align: center;
+  color: #121212;
+}
+
+.carts-title text:nth-child(2){
+  margin-left: 15rpx;
+  color: #e60705;
+}
+.carts-price text{
+   font-size: 24rpx;
+  text-align: center;
+  color: #676565;
+
+}
+.carts-price text:nth-child(2){
+  margin-left: 15rpx;
+  
+}
+.copy{
+   font-size: 24rpx;
+   border: solid 1rpx #aaaaaa;
+  color: #676565;
+  padding: 3rpx 20rpx;
+   border-radius: 4rpx;
+   margin-left:35rpx;
+}

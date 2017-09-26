@@ -1,0 +1,59 @@
+/* pages/addressList/addressList.wxss */
+@import "../pay/pay.wxss";
+
+.contain{
+  padding-top: 8rpx;
+}
+.navbar{
+  padding-bottom: 100rpx;
+}
+.navigator,.navbar{
+  background: #fff;
+}
+.navigator{
+  padding: 28rpx 0!important;
+  padding-left: 0;
+
+}
+.navigator-text{
+  border-bottom:1rpx solid #D8D8D8;
+  align-items: center;
+  padding: 28rpx 0;
+  justify-content: space-between;
+
+}
+.navigator-text icon{
+  margin: 0;
+}
+.navigator::before{
+  border:none;
+}
+.btn-area{
+  position: fixed;
+  bottom: 0;
+   width: 100%;
+}
+.btn-area button{
+   background-image: linear-gradient(135deg, #e30403, #c40101);
+   border-radius: 0;
+   width: 100%;
+    font-size: 30rpx;
+  font-weight: 500;
+  text-align: center;
+  color: #fbfbfb;
+  padding: 17rpx 0 13rpx 0;
+}
+.edit{
+  width: 45rpx;
+  height: 45rpx;
+  display: block;
+  margin-left: 30rpx;
+}
+.message{
+  margin-right: 45rpx;
+  margin-left: 20rpx;
+}
+.left{
+  display: flex;
+  align-items: center;
+}

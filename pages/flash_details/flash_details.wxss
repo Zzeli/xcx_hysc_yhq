@@ -1,0 +1,72 @@
+/* pages/flash_details/flash_details.wxss */
+@import "../details/details.wxss";
+text{
+  font-weight: normal!important;
+}
+.flash_price{
+  width: 100%;
+  z-index: 111111;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+}
+.left{
+  padding: 30rpx 20rpx 26rpx 25rpx;
+  box-sizing: border-box;
+  background: #ef3957;
+  width: 70%;
+  height: 100%;
+  display:flex;
+}
+.left .price{
+  display:flex;
+  align-items: center;
+
+}
+.left .price text{
+    font-size: 38rpx!important;
+  text-align: center;
+  color: #ffffff;
+  margin: 0;
+}
+.left .price text:nth-child(1){
+  font-size: 22rpx!important;
+  margin-top: 8rpx;
+}
+.right{
+    padding: 30rpx 20rpx 26rpx 25rpx;
+  box-sizing: border-box;
+  width: 30%;
+   background-color: #f4f3f3;
+  height: 100%; 
+  display:flex;
+  flex-direction: column;
+}
+.right text{
+  font-size: 22rpx;
+  text-align: center;
+  color: #3b3a3a;
+}
+.right .time{
+  display: flex;
+}
+.right .time view{
+  display: flex;
+}
+.right .time text{
+  padding: 8rpx;
+  border-radius: 4rpx;
+  background-color: #ef3957;
+}
+.no1{
+  font-size: 22rpx;
+  text-align: center;
+  color: #ffffff!important;
+  line-height: 67rpx;
+  margin-left: 15rpx;
+}
+.no1 .hr_class{
+  color: #ffffff!important;
+  border-color: #fff!important;
+  top: 35rpx;
+}
